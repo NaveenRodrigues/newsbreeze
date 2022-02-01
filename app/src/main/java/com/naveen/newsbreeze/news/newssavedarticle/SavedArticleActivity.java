@@ -29,11 +29,15 @@ public class SavedArticleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_article);
 
+        String jsonString = getIntent().getStringExtra(INTENT_KEY_ARTICLE);
         db.open();
-        Gson gson = new Gson();
-        Article article = gson.fromJson(getIntent().getStringExtra(INTENT_KEY_ARTICLE), Article.class);
 
-        db.insertNewsInfo(article);
+        if (jsonString != null && !jsonString.isEmpty()) {
+            Gson gson = new Gson();
+            Article article = gson.fromJson(getIntent().getStringExtra(INTENT_KEY_ARTICLE), Article.class);
+
+            db.insertNewsInfo(article);
+        }
         savedList = db.getAllNews();
 
         SavedAdapter adapter = new SavedAdapter(this,savedList);
