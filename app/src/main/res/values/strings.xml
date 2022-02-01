@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewsBreeze</string>
+    <string name="Search_Bar">Search</string>
+    <string name="Logo">NewsBreeze</string>
+    <string name="saved_Layout_Title">Saved</string>
+    <string name="Read_Button_Text">Read</string>
+    <string name="Save_Button_Text">Save</string>
+    <string name="News_ReadMore_Text">Read More</string>
+</resources>
